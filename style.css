@@ -1,0 +1,122 @@
+
+
+.baseZone{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+#deckZone .card, #drawZone .card, #aceZone .card, #clubZone .card, #heartZone .card, #diamondZone .card{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+#pile1 .card, #pile2 .card, #pile3 .card, #pile4 .card, #pile5 .card, #pile6 .card, #pile7 .card{
+  width: 100%;
+  height: 100%;
+}
+
+#playZone{
+  float: right;
+}
+
+
+#deckZone, #drawZone{
+  position: relative;
+  width: 7%;
+  border: 2px;
+  border-color: black;
+  border-style: solid;
+  margin: 1.5625%;
+  float: left;
+}
+
+#aceZone, #heartZone, #clubZone, #diamondZone{
+  position: relative;
+  width: 7%;
+  border: 2px;
+  border-color: black;
+  border-style: solid;
+  margin: 1.5625%;
+  float: right;
+}
+
+
+
+
+#pile1{
+  width: 7%;
+  margin: 0.5%;
+  border: 2px;
+  border-color: black;
+  border-style: solid;
+  float: left;
+  text-align: center;
+}
+
+#pile2{
+  width: 7%;
+  margin: 0.5%;
+  border: 2px;
+  border-color: black;
+  border-style: solid;
+  float: left;
+  text-align: center;
+}
+
+#pile3{
+  width: 7%;
+  margin: 0.5%;
+  border: 2px;
+  border-color: black;
+  border-style: solid;
+  float: left;
+  text-align: center;
+}
+
+#pile4{
+  width: 7%;
+  margin: 0.5%;
+  border: 2px;
+  border-color: black;
+  border-style: solid;
+  float: left;
+  text-align: center;
+}
+
+
+#pile5{
+  width: 7%;
+  margin: 0.5%;
+  border: 2px;
+  border-color: black;
+  border-style: solid;
+  float: left;
+  text-align: center;
+}
+
+
+#pile6{
+  width: 7%;
+  margin: 0.5%;
+  border: 2px;
+  border-color: black;
+  border-style: solid;
+  float: left;
+  text-align: center;
+}
+
+#pile7{
+  width: 7%;
+  margin: 0.5%;
+  border: 2px;
+  border-color: black;
+  border-style: solid;
+  float: left;
+  text-align: center;
+}
