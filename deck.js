@@ -3,6 +3,9 @@ deck = [];
 
 //card objects
 
+///////////////need to add the filename/image name to each object to bring image onto screen
+
+
 //all hearts
 deck.push(AceHearts = {
   card: 1,

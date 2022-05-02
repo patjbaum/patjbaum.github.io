@@ -2,23 +2,35 @@
 #dealerHand{
   margin-left: 30%;
   margin-right: 30%;
-  padding-left: 5%;
-  padding-right: 5%;
-  width: 30%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  width: 35%;
   border-style: solid;
   border-color: black;
 }
 
 #moves{
+  margin-left: 30%;
+  margin-right: 30%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  width: 35%;
+  border-style: solid;
+  border-color: black;
+}
 
+#hit, #stand{
+  width: 40%;
+  padding-top: 10%;
+  padding-bottom: 10%;
 }
 
 #playerHand{
   margin-left: 30%;
   margin-right: 30%;
-  padding-left: 5%;
-  padding-right: 5%;
-  width: 30%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  width: 35%;
   border-style: solid;
   border-color: black;
 }

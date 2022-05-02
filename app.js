@@ -5,23 +5,30 @@ console.log("help")
 //deck
 deck = [];
 
-//card objects
-//faceDown
-let faceDown = {
-  image: "facedown.png"
-};
-//all hearts
+//add event listeners
+const hitter = document.querySelector('#hit');
+hitter.addEventListener('click', hit)
 
+const stander = document.querySelector('#stand');
+stander.addEventListener('click', stand)
 
-console.log("deck assembled")
-//stack of cards object - just an array of cards
+//player draws a card
+function hit() {
 
+}
 
+//dealer draws a card
+function draw() {
 
-//
-//place card in stack
-//check if card is valid
-//check if game is won
-//check for move on click
+}
 
-///////need to add event listeners for each zone on the board
+//player stands
+//hides buttons
+function stand() {
+
+}
+
+//game gets card score
+function  score(){
+
+}
