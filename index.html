@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Web Test Title</title>
+    <title>Solitaire</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    My first webpage.
+    <!--different areas for cards to be set-->
+    <div id="deckZone">
+      <img class="base" src="test.jpg" style="width: 100%"></img>
+
+      <img class="card" src="faceDown.png" style="width: 100%"></img>
+      <img class="card" src="faceDown.png" style="width: 100%"></img>
+      <img class="card" src="faceDown.png" style="width: 100%"></img>
+      <img class="card" src="faceDown.png" style="width: 100%"></img>
+      <img class="card" src="faceDown.png" style="width: 100%"></img>
+
+    </div>
+
+    <div id="drawZone"><img class="base" src="test.jpg" style="width: 100%"></img></div>
+
+    <div id="aceZone"><img class="base" src="test.jpg" style="width: 100%"></img></div>
+    <div id="heartZone"><img class="base" src="test.jpg" style="width: 100%"></img></div>
+    <div id="clubZone"><img class="base" src="test.jpg" style="width: 100%"></img></div>
+    <div id="diamondZone"><img class="base" src="test.jpg" style="width: 100%"></img></div>
+
+    <div id = "playZone">
+      <div id="pile1"> <img class="card" src="faceDown.png"> </img></div>
+      <div id="pile2"> <img class="card" src="faceDown.png"> </img></div>
+      <div id="pile3"> <img class="card" src="faceDown.png"> </img></div>
+      <div id="pile4"> <img class="card" src="faceDown.png"> </img></div>
+      <div id="pile5"> <img class="card" src="faceDown.png"> </img></div>
+      <div id="pile6"> <img class="card" src="faceDown.png"> </img></div>
+      <div id="pile7"> <img class="card" src="faceDown.png"> </img></div>
+    </div>
+
+
+
+
   </body>
+  <script src="app.js"></script>
 </html>
