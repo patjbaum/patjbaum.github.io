@@ -1,4 +1,50 @@
 
+#dealerHand{
+  margin-left: 30%;
+  margin-right: 30%;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 30%;
+  border-style: solid;
+  border-color: black;
+}
+
+#moves{
+
+}
+
+#playerHand{
+  margin-left: 30%;
+  margin-right: 30%;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 30%;
+  border-style: solid;
+  border-color: black;
+}
+
+.backdrop{
+  position: relative;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .baseZone{
   position: relative;
