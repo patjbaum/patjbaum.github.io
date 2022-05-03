@@ -1,3 +1,5 @@
+//export deck;
+
 //deck
 deck = [];
 

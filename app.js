@@ -1,7 +1,7 @@
-import deck.js;
+//import deck.js;
 
 console.log("help")
-//make cards draggable
+
 //deck
 deck = [];
 
@@ -14,7 +14,7 @@ stander.addEventListener('click', stand)
 
 //player draws a card
 function hit() {
-
+  console.log('kill me')
 }
 
 //dealer draws a card
@@ -25,7 +25,8 @@ function draw() {
 //player stands
 //hides buttons
 function stand() {
-
+  console.log('help')
+  //hitter.classList
 }
 
 //game gets card score
