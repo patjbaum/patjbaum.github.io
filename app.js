@@ -1,5 +1,5 @@
 //import deck.js;
-//import {*} from './deck.js';
+//import {deck, shuffle} from './deck.js';
 
 console.log("help")
 
@@ -17,42 +17,58 @@ gamer.addEventListener('click', newGame)
 let dealerScore = 0;
 let playerScore = 0;
 
+let dealerZone = [];
+let playerZone = [];
 
 //player draws a card
 function hit() {
-  console.log('kill me')
-  //score
+  console.log('player hits')
+  newCard = deck.pop();
+  playerZone.push(newCard);
+  //update visual hand
+  playerScore+=newCard.num;
+  //update scoreboard
+  if(playerScore>21){
+    gameOver();
+  }
 }
 
 //dealer draws a card
 function draw() {
-
+  console.log('dealer draws')
+  newCard = deck.pop();
+  dealerZone.push(newCard);
+  //update visual hand
+  dealerScore+=newCard.num;
 }
 
 //player stands
 //hides buttons
 function stand() {
-  console.log('help')
+  console.log('player stands')
   hitter.classList.add("invisibleButton");
   stander.classList.add("invisibleButton");
   gamer.classList.remove("invisibleButton");
 }
 
-//game gets card score
-function  score(){
+//updates scoreboard
+function score(){
 
 }
 
 function newGame() {
   shuffle(deck);
-  console.log('pain');
+  console.log('new game started');
   hitter.classList.remove("invisibleButton");
   stander.classList.remove("invisibleButton");
   gamer.classList.add("invisibleButton");
   dealerScore = 0;
   playerScore = 0;
-
   //removes cards from hands
+}
+
+function gameOver() {
+  console.log("gama ovar")
 }
 
 ////////////////////////////////////////// deck dot js
@@ -69,6 +85,9 @@ function shuffle(deck) {
 
   return deck;
 };
+
+
+
 
 //card objects
 ///////////////need to add the filename/image name to each object to bring image onto screen

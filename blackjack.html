@@ -6,28 +6,33 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+
+<div id="upperBlock">
     <div id="dealerHand">
-
       <img class="backdrop" src="backdrop.png" alt="Where the dealer's cards go"></img>
-
     </div>
+</div>
+
+<div id="centerBlock">
+  <div id = "scoreboard">
+    <p>Dealer Score: </p>
+    <p>Player Score: </p>
+  </div>
 
     <div id="moves">
-
-        <button id="hit" type="button" name="hitButton"> Hit </button>
-        <button id="newgame" class="invisibleButton" type="button" name="reset"> Next Round </button>
-        <button id="stand" type="button" name="standButton"> Stand </button>
-
-
+        <button id="hit" class="invisibleButton" type="button" name="hitButton"> Hit </button>
+        <button id="newgame" type="button" name="reset"> Next Round </button>
+        <button id="stand" class="invisibleButton" type="button" name="standButton"> Stand </button>
     </div>
 
+
+</div>
+
+<div id="lowerBlock">
     <div id="playerHand">
-
-      <img class="backdrop" src="backdrop.png" alt="Where the dealer's cards go"></img>
-
+      <img class="backdrop" src="backdrop.png" alt="Where the player's cards go"></img>
     </div>
-
-
+</div>
 
   </body>
   <script src="app.js"></script>
