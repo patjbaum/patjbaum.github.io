@@ -65,8 +65,9 @@ function score(){
 
 function newGame() {
   //removes cards from hands
-  deck.push(playerZone);
-  deck.push(dealerZone);
+  //deck.push(playerZone);
+  //deck.push(dealerZone);
+  //^^^^^^^these  two lines don't work. they push arrays of cards into deck
   dealerZone = [];
   playerZone = [];
   //shuffles deck
