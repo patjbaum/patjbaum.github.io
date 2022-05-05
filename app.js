@@ -13,6 +13,11 @@ stander.addEventListener('click', stand)
 const gamer = document.querySelector('#newgame');
 gamer.addEventListener('click', newGame)
 
+
+let dealerScore = 0;
+let playerScore = 0;
+
+
 //player draws a card
 function hit() {
   console.log('kill me')
@@ -44,6 +49,10 @@ function newGame() {
   hitter.classList.remove("invisibleButton");
   stander.classList.remove("invisibleButton");
   gamer.classList.add("invisibleButton");
+  dealerScore = 0;
+  playerScore = 0;
+
+  //removes cards from hands
 }
 
 ////////////////////////////////////////// deck dot js
