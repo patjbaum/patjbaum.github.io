@@ -27,8 +27,10 @@ function hit() {
   playerZone.push(newCard);
   //update visual hand
   playerScore+=newCard.num;
+  console.log('player hand: ' + playerScore);
   //update scoreboard
   if(playerScore>21){
+    //bust message
     gameOver();
   }
 }
@@ -40,15 +42,20 @@ function draw() {
   dealerZone.push(newCard);
   //update visual hand
   dealerScore+=newCard.num;
+  console.log('dealer hand: ' + dealerScore);
 }
 
 //player stands
 //hides buttons
 function stand() {
   console.log('player stands')
-  hitter.classList.add("invisibleButton");
-  stander.classList.add("invisibleButton");
-  gamer.classList.remove("invisibleButton");
+  //reveal dealer facedown card
+  //checks if dealer should draw
+  while(dealerScore<17){
+    draw();
+  }
+  //game ends
+  gameOver();
 }
 
 //updates scoreboard
@@ -57,18 +64,54 @@ function score(){
 }
 
 function newGame() {
+  //removes cards from hands
+  deck.push(playerZone);
+  deck.push(dealerZone);
+  dealerZone = [];
+  playerZone = [];
+  //shuffles deck
   shuffle(deck);
+
+  //starts new game
   console.log('new game started');
   hitter.classList.remove("invisibleButton");
   stander.classList.remove("invisibleButton");
   gamer.classList.add("invisibleButton");
   dealerScore = 0;
   playerScore = 0;
-  //removes cards from hands
+
+  //draws two new cards
+  draw();
+  hit();
+  draw();
+  hit();
 }
 
 function gameOver() {
   console.log("gama ovar")
+  //display loss message
+  //can test different cases for game end here
+
+  //if player busts
+  if(playerScore>21){
+    console.log('player bust');
+  }
+  //if dealer busts
+  else if (dealerScore>21) {
+    console.log('dealer bust');
+  }
+  //if dealer wins
+  else if (dealerScore>playerScore){
+    console.log('dealer win');
+  }
+  //if player wins
+  else if (playerScore>dealerScore) {
+    console.log('player win')
+  }
+  //change button visibility
+  hitter.classList.add("invisibleButton");
+  stander.classList.add("invisibleButton");
+  gamer.classList.remove("invisibleButton");
 }
 
 ////////////////////////////////////////// deck dot js
@@ -85,9 +128,6 @@ function shuffle(deck) {
 
   return deck;
 };
-
-
-
 
 //card objects
 ///////////////need to add the filename/image name to each object to bring image onto screen
