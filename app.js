@@ -5,30 +5,42 @@ console.log("help")
 
 //add event listeners
 const hitter = document.querySelector('#hit');
-hitter.addEventListener('click', hit)
+hitter.addEventListener('click', hit);
 
 const stander = document.querySelector('#stand');
-stander.addEventListener('click', stand)
+stander.addEventListener('click', stand);
 
 const gamer = document.querySelector('#newgame');
-gamer.addEventListener('click', newGame)
+gamer.addEventListener('click', newGame);
+
+const scoreD = document.querySelector('#dealerNum');
+const scoreP = document.querySelector('#playerNum');
+const scoreR = document.querySelector('#result');
 
 
 let dealerScore = 0;
 let playerScore = 0;
+let faceDownScore = 0;
 
 let dealerZone = [];
 let playerZone = [];
+let faceDown = [];
+
+//let usedCards = [];
 
 //player draws a card
 function hit() {
-  console.log('player hits')
   newCard = deck.pop();
+  if(newCard.num<11){
+    playerScore+=newCard.num;
+  }else {
+    playerScore+=10;
+  }
   playerZone.push(newCard);
-  //update visual hand
-  playerScore+=newCard.num;
+
   console.log('player hand: ' + playerScore);
   //update scoreboard
+  score();
   if(playerScore>21){
     //bust message
     gameOver();
@@ -36,14 +48,32 @@ function hit() {
 }
 
 //dealer draws a card
-function draw() {
-  console.log('dealer draws')
+function dealDraw() {
   newCard = deck.pop();
+
+  if(newCard.num<11){
+    dealerScore+=newCard.num;
+  }else {
+    dealerScore+=10;
+  }
   dealerZone.push(newCard);
-  //update visual hand
-  dealerScore+=newCard.num;
+
   console.log('dealer hand: ' + dealerScore);
 }
+
+//dealer draws a face down card
+function faceDownDraw(){
+  newCard = deck.pop();
+  if(newCard.num<11){
+    faceDownScore+=newCard.num;
+  }else {
+    faceDownScore+=10;
+  }
+  faceDown.push(newCard);
+}
+
+
+
 
 //player stands
 //hides buttons
@@ -52,7 +82,8 @@ function stand() {
   //reveal dealer facedown card
   //checks if dealer should draw
   while(dealerScore<17){
-    draw();
+    dealDraw();
+    score();
   }
   //game ends
   gameOver();
@@ -60,21 +91,72 @@ function stand() {
 
 //updates scoreboard
 function score(){
-
+  scoreD.innerText = dealerScore;
+  scoreP.innerText = playerScore;
 }
 
+function gameOver() {
+  console.log("gama ovar");
+  //display loss message
+  //can test different cases for game end here
+  //if player busts
+  if(playerScore>21){
+    console.log('player bust');
+    scoreR.innerText = 'Player Bust!';
+    //setTimeout(scoreR.classList.remove("invisibleButton"),10000);
+    scoreR.classList.remove("invisibleText");
+  }
+  //if dealer busts
+  else if (dealerScore>21) {
+    console.log('dealer bust');
+    scoreR.innerText = 'Dealer Busts!';
+    scoreR.classList.remove("invisibleText");
+  }
+  //if dealer wins
+  else if (dealerScore>=playerScore){
+    console.log('dealer win');
+    scoreR.innerText = 'Dealer Wins!';
+    scoreR.classList.remove("invisibleText");
+  }
+  //if player wins
+  else if (playerScore>dealerScore) {
+    console.log('player win');
+    scoreR.innerText = 'You Win!';
+    scoreR.classList.remove("invisibleText");
+  }
+
+  //change button visibility
+  hitter.classList.add("invisibleButton");
+  stander.classList.add("invisibleButton");
+  gamer.classList.remove("invisibleButton");
+}
+
+
+
+//begin new game//////////////////////////////////////////
 function newGame() {
+  //reset scoreboard
+  scoreD.innerText = 0;
+  scoreP.innerText = 0;
+  scoreR.innerText = '___';
+
   //removes cards from hands
-  //deck.push(playerZone);
-  //deck.push(dealerZone);
-  //^^^^^^^these  two lines don't work. they push arrays of cards into deck
+  for(let i = 0; i<dealerZone.length; i++){
+    deck.push(dealerZone[i]);
+  }
+  for(let i = 0; i<playerZone.length; i++){
+    deck.push(playerZone[i]);
+  }
+
   dealerZone = [];
   playerZone = [];
+
   //shuffles deck
   shuffle(deck);
 
   //starts new game
   console.log('new game started');
+  scoreR.classList.add("invisibleText");
   hitter.classList.remove("invisibleButton");
   stander.classList.remove("invisibleButton");
   gamer.classList.add("invisibleButton");
@@ -82,38 +164,13 @@ function newGame() {
   playerScore = 0;
 
   //draws two new cards
-  draw();
+  faceDownDraw();
   hit();
-  draw();
+  dealDraw();
   hit();
 }
 
-function gameOver() {
-  console.log("gama ovar")
-  //display loss message
-  //can test different cases for game end here
 
-  //if player busts
-  if(playerScore>21){
-    console.log('player bust');
-  }
-  //if dealer busts
-  else if (dealerScore>21) {
-    console.log('dealer bust');
-  }
-  //if dealer wins
-  else if (dealerScore>playerScore){
-    console.log('dealer win');
-  }
-  //if player wins
-  else if (playerScore>dealerScore) {
-    console.log('player win')
-  }
-  //change button visibility
-  hitter.classList.add("invisibleButton");
-  stander.classList.add("invisibleButton");
-  gamer.classList.remove("invisibleButton");
-}
 
 ////////////////////////////////////////// deck dot js
 deck = [];
