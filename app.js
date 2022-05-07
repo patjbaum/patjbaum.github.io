@@ -46,6 +46,10 @@ function hit() {
     //bust message
     gameOver();
   }
+  else if (playerScore===21) {
+    //check dealer cards
+    stand();
+  }
 }
 
 //dealer draws a card
