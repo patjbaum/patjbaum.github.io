@@ -30,6 +30,7 @@ let faceDown = [];
 
 //player draws a card
 function hit() {
+  console.log('player draws');
   newCard = deck.pop();
   if(newCard.num<11){
     playerScore+=newCard.num;
@@ -49,6 +50,7 @@ function hit() {
 
 //dealer draws a card
 function dealDraw() {
+  console.log('dealer draws');
   newCard = deck.pop();
 
   if(newCard.num<11){
@@ -80,7 +82,11 @@ function faceDownDraw(){
 function stand() {
   console.log('player stands')
   //reveal dealer facedown card
+  dealerScore +=faceDownScore;
+  dealerZone.shift(faceDown[0]);
+  score();
   //checks if dealer should draw
+
   while(dealerScore<17){
     dealDraw();
     score();
@@ -150,6 +156,7 @@ function newGame() {
 
   dealerZone = [];
   playerZone = [];
+  faceDown = [];
 
   //shuffles deck
   shuffle(deck);
@@ -162,6 +169,7 @@ function newGame() {
   gamer.classList.add("invisibleButton");
   dealerScore = 0;
   playerScore = 0;
+  faceDownScore = 0;
 
   //draws two new cards
   faceDownDraw();
