@@ -173,6 +173,13 @@ function newGame() {
   playerZone = [];
   faceDown = [];
 
+  //removes images from board
+  /*
+  while (there are images on the board) {
+    document.querySelector('#playerHand').removeChild(cardImage);
+  }
+  */
+
   //shuffles deck
   shuffle(deck);
 
