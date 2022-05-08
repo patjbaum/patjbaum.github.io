@@ -21,6 +21,11 @@ const scoreD = document.querySelector('#dealerNum');
 const scoreP = document.querySelector('#playerNum');
 const scoreR = document.querySelector('#result');
 
+const handSize = ['nocards',
+                  'onecards',
+                  'twocards',
+                  'threecards',
+                  'fourcards', 'fivecards', 'sixcards', 'sevencards', 'eightcards'];
 
 let dealerScore = 0;
 let playerScore = 0;
@@ -49,6 +54,7 @@ function hit() {
   newCardImage.classList.add('card'); //some class to determine whatever it needs
                                   //probably add additional css here for proper location
   //display in current position
+  playerHand.className = handSize[playerZone.length];
   playerHand.appendChild(newCardImage);
 
   console.log('player hand: ' + playerScore);
@@ -82,6 +88,7 @@ function dealDraw() {
   newCardImage.classList.add('card'); //some class to determine whatever it needs
                                   //probably add additional css here for proper location
   //display in current position
+  dealerHand.className = handSize[dealerZone.length + faceDown.length];
   dealerHand.appendChild(newCardImage);
 
 

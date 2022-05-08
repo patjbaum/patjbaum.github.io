@@ -4,22 +4,82 @@ body{
 }
 
 
-.card{
-  width: 22.5%;
+
+
+.twocards{
+  margin-left: auto;
+  margin-right: auto;
+  width: 27.5%;
+}
+
+.twocards .card{
+  width:47.5%;
   margin-right: 2.5%;
-  top: 0px;
-  left: 0px;
+}
+
+.threecards{
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+}
+
+.threecards .card{
+  width:30%;
+  margin-right: 2.5%;
+}
+
+.fourcards{
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.fourcards .card{
+  width:22.5%;
+  margin-right: 2.5%;
+}
+
+.fivecards{
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+}
+
+.fivecards .card{
+  width:17.5%;
+  margin-right: 2.5%;
+}
+
+.sixcards{
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.sixcards .card{
+  width: 13.5%;
+  margin-right: 2.5%;
+}
+
+
+.sevencards{
+
+}
+
+.eightcards{
+
 }
 
 #dealerHand{
-  margin-left: 22.5%;
+  /*margin-left: 22.5%;
   margin-right: 22.5%;
   padding-left: 2.5%;
   padding-right: 2.5%;
-  width: 50%;
+  width: 50%;*/
   border-style: solid;
   border-color: black;
 }
+
 
 #moves{
   margin-left: 20%;
@@ -51,11 +111,12 @@ body{
 }
 
 #playerHand{
+  /*margin: auto;
   margin-left: 22.5%;
   margin-right: 22.5%;
   padding-left: 2.5%;
   padding-right: 2.5%;
-  width: 50%;
+  width: 50%;*/
   border-style: solid;
   border-color: black;
 }
