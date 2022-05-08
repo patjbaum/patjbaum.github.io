@@ -17,6 +17,14 @@ stander.addEventListener('click', stand);
 const gamer = document.querySelector('#newgame');
 gamer.addEventListener('click', newGame);
 
+const starter = document.querySelector('#beginGame');
+starter.addEventListener('click', function(){
+  document.querySelector('#startsite').className ='invisibleButton';
+  document.querySelector('#centerBlock').className = '';
+
+  newGame();
+} );
+
 const scoreD = document.querySelector('#dealerNum');
 const scoreP = document.querySelector('#playerNum');
 const scoreR = document.querySelector('#result');
@@ -127,11 +135,13 @@ function stand() {
   dealerdown = document.querySelector('.backCard');
   dealerdown.src= cardDir + faceDown[0].pic;
   dealerScore +=faceDownScore;
-  dealerZone.shift(faceDown[0]);
+  dealerZone.push(faceDown[0]);
+  faceDown = [];
   score();
   //checks if dealer should draw
 
   while(dealerScore<17){
+    //setTimeout(dealDraw, 500);
     dealDraw();
     score();
   }
@@ -145,6 +155,8 @@ function score(){
   scoreP.innerText = playerScore;
 }
 
+
+//ends game
 function gameOver() {
   console.log("gama ovar");
   //display loss message
