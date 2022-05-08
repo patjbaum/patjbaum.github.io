@@ -3,6 +3,10 @@
 
 console.log("help")
 
+//cardHand objects
+const playerHand = document.querySelector('#playerHand');
+const dealerHand = document.querySelector('#dealerHand');
+
 //add event listeners
 const hitter = document.querySelector('#hit');
 hitter.addEventListener('click', hit);
@@ -42,10 +46,10 @@ function hit() {
   //create new image tag with newCard.pic
   newCardImage = document.createElement('img');
   newCardImage.src = cardDir + newCard.pic;
-  //newCardImage.classList.add(); //some class to determine whatever it needs
+  newCardImage.classList.add('card'); //some class to determine whatever it needs
                                   //probably add additional css here for proper location
   //display in current position
-  document.querySelector('#playerHand').appendChild(newCardImage);
+  playerHand.appendChild(newCardImage);
   //change current position to a little to the right
 
   console.log('player hand: ' + playerScore);
@@ -174,11 +178,11 @@ function newGame() {
   faceDown = [];
 
   //removes images from board
-  /*
-  while (there are images on the board) {
-    document.querySelector('#playerHand').removeChild(cardImage);
+
+  while (playerHand.contains(document.querySelector('.card'))) {
+    playerHand.removeChild(document.querySelector('.card'));
   }
-  */
+  
 
   //shuffles deck
   shuffle(deck);
