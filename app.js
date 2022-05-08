@@ -50,7 +50,6 @@ function hit() {
                                   //probably add additional css here for proper location
   //display in current position
   playerHand.appendChild(newCardImage);
-  //change current position to a little to the right
 
   console.log('player hand: ' + playerScore);
   //update scoreboard
@@ -77,6 +76,15 @@ function dealDraw() {
   }
   dealerZone.push(newCard);
 
+  //create new image tag with newCard.pic
+  newCardImage = document.createElement('img');
+  newCardImage.src = cardDir + newCard.pic;
+  newCardImage.classList.add('card'); //some class to determine whatever it needs
+                                  //probably add additional css here for proper location
+  //display in current position
+  dealerHand.appendChild(newCardImage);
+
+
   console.log('dealer hand: ' + dealerScore);
 }
 
@@ -91,6 +99,14 @@ function faceDownDraw(){
   faceDown.push(newCard);
 
   //display faceDownCard
+  //create new image tag with newCard.pic
+  newCardImage = document.createElement('img');
+  newCardImage.src = cardDir + 'faceDownCard.png';
+  newCardImage.classList.add('card');
+  newCardImage.classList.add('backCard');  //probably add additional css here for proper location
+  //display in current position
+  dealerHand.appendChild(newCardImage);
+
 }
 
 
@@ -101,6 +117,8 @@ function faceDownDraw(){
 function stand() {
   console.log('player stands')
   //reveal dealer facedown card
+  dealerdown = document.querySelector('.backCard');
+  dealerdown.src= cardDir + faceDown[0].pic;
   dealerScore +=faceDownScore;
   dealerZone.shift(faceDown[0]);
   score();
@@ -178,11 +196,14 @@ function newGame() {
   faceDown = [];
 
   //removes images from board
-
+  while (dealerHand.contains(document.querySelector('.card'))) {
+    dealerHand.removeChild(document.querySelector('.card'));
+  }
   while (playerHand.contains(document.querySelector('.card'))) {
     playerHand.removeChild(document.querySelector('.card'));
   }
-  
+
+
 
   //shuffles deck
   shuffle(deck);
