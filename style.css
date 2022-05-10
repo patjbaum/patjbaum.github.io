@@ -5,7 +5,13 @@ body{
 }
 
 
+.winner{
+  color: #00eeff;
+}
 
+.loser{
+  color: #ff3352;
+}
 
 #beginGame{
   padding-top: 0.5%;

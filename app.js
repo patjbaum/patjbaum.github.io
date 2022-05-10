@@ -166,25 +166,25 @@ function gameOver() {
     console.log('player bust');
     scoreR.innerText = 'Player Bust!';
     //setTimeout(scoreR.classList.remove("invisibleButton"),10000);
-    scoreR.classList.remove("invisibleText");
+    scoreR.className = "loser";
   }
   //if dealer busts
   else if (dealerScore>21) {
     console.log('dealer bust');
     scoreR.innerText = 'Dealer Busts!';
-    scoreR.classList.remove("invisibleText");
+    scoreR.className = "winner";
   }
   //if dealer wins
   else if (dealerScore>=playerScore){
     console.log('dealer win');
     scoreR.innerText = 'Dealer Wins!';
-    scoreR.classList.remove("invisibleText");
+    scoreR.className = "loser";
   }
   //if player wins
   else if (playerScore>dealerScore) {
     console.log('player win');
     scoreR.innerText = 'You Win!';
-    scoreR.classList.remove("invisibleText");
+    scoreR.className = "winner";
   }
 
   //change button visibility
@@ -229,7 +229,7 @@ function newGame() {
 
   //starts new game
   console.log('new game started');
-  scoreR.classList.add("invisibleText");
+  scoreR.className="invisibleText";
   hitter.classList.remove("invisibleButton");
   stander.classList.remove("invisibleButton");
   gamer.classList.add("invisibleButton");
