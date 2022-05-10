@@ -7,26 +7,23 @@ body{
 
 
 #beginGame{
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -25px 0 0 -25px;
+  margin: -2% 0 0 -8%;
+  font-size: 20pt;
+  color: rgb(240,240,240);
+  background: rgb(2,0,36);
+  background: linear-gradient(135deg, rgba(2,0,36,1) 16%, rgba(15,15,145,1) 84%, rgba(122,168,177,1) 100%);
 }
 
 #dealerHand{
-  border-style: solid;
-  border-color: black;
+  /*border-style: solid;
+  border-color: black;*/
 }
 
-
-#moves{
-  margin-left: 20%;
-  padding-left: 5%;
-  padding-right: 5%;
-  width: 50%;
-  border-style: solid;
-  border-color: black;
-}
 
 #scoreboard{
   width: 10%;
@@ -36,22 +33,41 @@ body{
   float: right;
 }
 
-#hit, #stand, #newgame{
-  width: 30%;
+#moves{
+  margin-left: 40%;
+  width: 20%;
+
+  /*border-style: solid;
+  border-color: black;*/
+}
+
+#hit, #stand{
+  width: 47%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin: 1%;
+  font-size: 20pt;
+  color: rgb(240,240,240);
+  background: rgb(2,0,36);
+  background: linear-gradient(135deg, rgba(2,0,36,1) 16%, rgba(15,15,145,1) 84%, rgba(122,168,177,1) 100%);
+}
+
+#newgame{
+  width: 98%;
   padding-top: 5%;
   padding-bottom: 5%;
   margin-left: 1%;
   margin-right: 1%;
-  font-size: 24pt;
-  color: white;
+  font-size: 20pt;
+  color: rgb(240,240,240);
   background: rgb(2,0,36);
   background: linear-gradient(135deg, rgba(2,0,36,1) 16%, rgba(15,15,145,1) 84%, rgba(122,168,177,1) 100%);
 }
 
 #playerHand{
 
-  border-style: solid;
-  border-color: black;
+  /*border-style: solid;
+  border-color: black;*/
 }
 
 .backdrop{
@@ -99,22 +115,22 @@ body{
 .fourcards{
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 60%;
 }
 
 .fourcards .card{
-  width:22.5%;
+  width:22%;
   margin-right: 2.5%;
 }
 
 .fivecards{
   margin-left: auto;
   margin-right: auto;
-  width: 85%;
+  width: 75%;
 }
 
 .fivecards .card{
-  width:17.5%;
+  width:15%;
   margin-right: 2.5%;
 }
 
