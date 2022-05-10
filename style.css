@@ -7,10 +7,12 @@ body{
 
 .winner{
   color: #00eeff;
+  font-weight: bold;
 }
 
 .loser{
   color: #ff3352;
+  font-weight: bold;
 }
 
 #beginGame{
