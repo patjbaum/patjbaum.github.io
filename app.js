@@ -43,7 +43,7 @@ let dealerZone = [];
 let playerZone = [];
 let faceDown = [];
 
-let cardDir = 'C:\\Users\\cryst\\Downloads\\Website Project\\patjbaum.github.io\\cards\\';
+let cardDir = '.cards\\';
 
 //player draws a card
 function hit() {
