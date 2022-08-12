@@ -68,7 +68,7 @@ function hit() {
   playerZone.push(newCard);
 
   //changes aces to 1 from 11 if hit
-  if(playerScore>21 && playerAce>0 /* a card with num == 1 exists in the hand*/)){
+  if(playerScore>21 && playerAce>0 /* a card with num == 1 exists in the hand*/){
     playerScore-=10;
     playerAce--;
   }
