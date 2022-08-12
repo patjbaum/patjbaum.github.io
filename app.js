@@ -3,11 +3,11 @@
 
 console.log("help")
 
-//cardHand objects
+//cardHand objects //locations of cards on screen
 const playerHand = document.querySelector('#playerHand');
 const dealerHand = document.querySelector('#dealerHand');
 
-//add event listeners
+//add event listeners for buttons on screen
 const hitter = document.querySelector('#hit');
 hitter.addEventListener('click', hit);
 
@@ -25,28 +25,38 @@ starter.addEventListener('click', function(){
   newGame();
 } );
 
+//the text on screen showing pertinent info
 const scoreD = document.querySelector('#dealerNum');
 const scoreP = document.querySelector('#playerNum');
 const scoreR = document.querySelector('#result');
 
+//used for building player and dealer hands
 const handSize = ['nocards',
                   'onecards',
                   'twocards',
                   'threecards',
                   'fourcards', 'fivecards', 'sixcards', 'sevencards', 'eightcards'];
 
+//total value of cards dealt
 let dealerScore = 0;
 let playerScore = 0;
 let faceDownScore = 0;
 
+//list of cards in each hand
 let dealerZone = [];
 let playerZone = [];
 let faceDown = [];
 
+//card directory
 let cardDir = 'cards/';
 
+//number of aces=11 present in each hand
+//increments each time an ace is counted as 11
+//decrements each time it is reduced from 11 to 1
 let playerAce = 0;
 let dealerAce = 0;
+let faceDownAce = 0;
+
 
 //player draws a card
 function hit() {
