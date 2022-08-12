@@ -45,16 +45,33 @@ let faceDown = [];
 
 let cardDir = 'cards/';
 
+let playerAce = 0;
+let dealerAce = 0;
+
 //player draws a card
 function hit() {
   console.log('player draws');
   newCard = deck.pop();
   if(newCard.num<11){
-    playerScore+=newCard.num;
+    //adds 1 or 11 for ace
+    if(newCard.num===1){
+      if(playerScore+11<=21){
+        playerScore+=11;
+        playerAce++;
+      }else{
+        playerScore+=newCard.num;
+      }
+    }
   }else {
     playerScore+=10;
   }
   playerZone.push(newCard);
+
+  //changes aces to 1 from 11 if hit
+  if(playerScore>21 && playerAce>0 /* a card with num == 1 exists in the hand*/)){
+    playerScore-=10;
+    playerAce--;
+  }
 
   //create new image tag with newCard.pic
   newCardImage = document.createElement('img');
