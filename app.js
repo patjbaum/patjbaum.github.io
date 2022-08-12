@@ -59,8 +59,10 @@ function hit() {
         playerScore+=11;
         playerAce++;
       }else{
-        playerScore+=newCard.num;
+        playerScore+=1;
       }
+    }else{
+      playerScore+=newCard.num;
     }
   }else {
     playerScore+=10;
