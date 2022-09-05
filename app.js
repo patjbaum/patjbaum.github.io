@@ -143,6 +143,7 @@ function dealDraw() {
 
 
   console.log('dealer hand: ' + dealerScore);
+  }
 }
 
 //dealer draws a face down card
@@ -324,6 +325,7 @@ class playingCard {
 }
 //fills deck with cards
 let suits = ['spades','hearts','clubs','diamonds'];
+
 for(let i = 1; i<=13; i++){
   for(let s = 0; s<suits.length;s++){
     let picfile = i.toString() + suits[s] + '.png';
