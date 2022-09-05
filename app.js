@@ -57,7 +57,6 @@ let playerAce = 0;
 let dealerAce = 0;
 let faceDownAce = 0;
 
-
 //player draws a card
 function hit() {
   console.log('player draws');
@@ -113,11 +112,25 @@ function dealDraw() {
   newCard = deck.pop();
 
   if(newCard.num<11){
-    dealerScore+=newCard.num;
+    //check if ace should be 1 or 11
+    if(newCard.num===1){
+      if(dealerScore+faceDownScore+11<=21){
+        dealerScore+=11;
+        dealerAce++;
+    }
+      else {
+        dealerScore+=newCard.num;
+      }
   }else {
     dealerScore+=10;
   }
   dealerZone.push(newCard);
+
+  //changes aces to 1 from 11 if hit
+  if((dealerScore + faceDownScore)>21 && dealerAce>0){
+    dealerScore-=10;
+    dealerAce--;
+  }
 
   //create new image tag with newCard.pic
   newCardImage = document.createElement('img');
@@ -136,7 +149,14 @@ function dealDraw() {
 function faceDownDraw(){
   newCard = deck.pop();
   if(newCard.num<11){
-    faceDownScore+=newCard.num;
+    //if ace, begins with 11
+    if(newCard.num===1){
+      faceDownScore+=11;
+      dealerAce++;
+    }
+    else {
+      faceDownScore+=newCard.num;
+    }
   }else {
     faceDownScore+=10;
   }
