@@ -260,6 +260,9 @@ function newGame() {
     deck.push(playerZone[i]);
   }
 
+  playerAce = 0;
+  dealerAce = 0;
+  
   dealerZone = [];
   playerZone = [];
   faceDown = [];
