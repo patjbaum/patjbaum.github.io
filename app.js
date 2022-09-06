@@ -153,7 +153,7 @@ function faceDownDraw(){
     //if ace, begins with 11
     if(newCard.num===1){
       faceDownScore+=11;
-      dealerAce++;
+      faceDownAce++;
     }
     else {
       faceDownScore+=newCard.num;
@@ -262,7 +262,8 @@ function newGame() {
 
   playerAce = 0;
   dealerAce = 0;
-  
+  faceDownAce = 0;
+
   dealerZone = [];
   playerZone = [];
   faceDown = [];
