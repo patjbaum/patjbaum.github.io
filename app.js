@@ -121,6 +121,7 @@ function dealDraw() {
       else {
         dealerScore+=newCard.num;
       }
+    }
   }else {
     dealerScore+=10;
   }
@@ -143,7 +144,7 @@ function dealDraw() {
 
 
   console.log('dealer hand: ' + dealerScore);
-  }
+  
 }
 
 //dealer draws a face down card
